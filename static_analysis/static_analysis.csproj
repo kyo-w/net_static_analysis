@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AsmResolver.DotNet" Version="5.4.0" />
+      <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" />
+      <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.0-preview.7.23376.1" />
+      <PackageReference Include="ShellProgressBar" Version="5.2.0" />
+      <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+      <PackageReference Include="System.Text.Json" Version="6.0.8" />
+    </ItemGroup>
+
+</Project>
