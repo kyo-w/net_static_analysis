@@ -4,7 +4,7 @@ using static_analysis.help;
 
 public class Program
 {
-    static async Task Main(string[] args)
+    private static async Task Main(string[] args)
     {
         Init();
         var rootCommand = new RootCommand("静态分析dll工具");

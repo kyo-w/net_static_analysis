@@ -15,22 +15,18 @@ public class MapManager
         string outputDirOption,
         string outputTypeOption)
     {
-        var outputTypeHandler = getOutputTypeHandler(outputTypeOption);
+        var outputTypeHandler = GetOutputTypeHandler(outputTypeOption);
         outputTypeHandler.Handle(outputDirOption);
     }
 
-    private static IOutputHandler getOutputTypeHandler(string outputTypeOption)
+    private static IOutputHandler GetOutputTypeHandler(string outputTypeOption)
     {
-        switch (outputTypeOption)
+        return outputTypeOption switch
         {
-            case "console":
-                return new ConsoleHandler();
-            case "csv":
-                return new CsvHandler();
-            case "json":
-                return new JsonHandler();
-            default:
-                return new CsvHandler();
-        }
+            "console" => new ConsoleHandler(),
+            "csv" => new CsvHandler(),
+            "json" => new JsonHandler(),
+            _ => new CsvHandler()
+        };
     }
 }

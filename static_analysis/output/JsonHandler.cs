@@ -22,10 +22,8 @@ public class JsonHandler : IOutputHandler
 
     private void Write(string fileName, object maps, Type type)
     {
-        using (var controllerStream = new StreamWriter(fileName))
-        {
-            var serialize = JsonSerializer.Serialize(maps, type);
-            controllerStream.WriteLine(serialize);
-        }
+        using var controllerStream = new StreamWriter(fileName);
+        var serialize = JsonSerializer.Serialize(maps, type);
+        controllerStream.WriteLine(serialize);
     }
 }

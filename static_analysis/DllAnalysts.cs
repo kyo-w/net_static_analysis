@@ -8,7 +8,7 @@ namespace static_analysis;
 
 public class DllAnalysts
 {
-    private static readonly ProgressBarOptions _progressBarOptions = new ProgressBarOptions
+    private static readonly ProgressBarOptions ProgressBarOptions = new ProgressBarOptions
     {
         ForegroundColor = ConsoleColor.Yellow,
         ForegroundColorDone = ConsoleColor.DarkGreen,
@@ -16,10 +16,10 @@ public class DllAnalysts
         BackgroundCharacter = '#'
     };
 
-    private static readonly Dictionary<string, List<TypeDefinition>> cacheTypeDefinitions =
+    private static readonly Dictionary<string, List<TypeDefinition>> CacheTypeDefinitions =
         new Dictionary<string, List<TypeDefinition>>();
 
-    private static int allTypeSize = 0;
+    private static int _allTypeSize = 0;
 
     public static void AnalystsEveryDll(IEnumerable<ClrModule> clrModules, bool passSystemDllOption,
         bool singleAssemblyOption)
@@ -43,13 +43,13 @@ public class DllAnalysts
         {
             string moduleName = oneOfDll.Name;
             var typeDefinitions = oneOfDll.GetAllTypes().ToList();
-            allTypeSize += typeDefinitions.Count;
-            var complete = cacheTypeDefinitions.TryAdd(moduleName, typeDefinitions);
+            _allTypeSize += typeDefinitions.Count;
+            var complete = CacheTypeDefinitions.TryAdd(moduleName, typeDefinitions);
             if (!complete)
             {
                 continue;
             }
-            using (var bar = new ProgressBar(typeDefinitions.Count, $"分析模块: {oneOfDll.Name}", _progressBarOptions))
+            using (var bar = new ProgressBar(typeDefinitions.Count, $"分析模块: {oneOfDll.Name}", ProgressBarOptions))
             {
                 foreach (var typeDefinition in typeDefinitions)
                 {
@@ -82,9 +82,9 @@ public class DllAnalysts
     private static List<ModuleDefinition> ProgressLoaderModule(string[] allModule)
     {
         Console.Clear();
-        using var bar = new ProgressBar(allModule.Length, "分析DLL模块", _progressBarOptions);
+        using var bar = new ProgressBar(allModule.Length, "分析DLL模块", ProgressBarOptions);
         var assemblies = new List<ModuleDefinition>();
-        int analysis = 0;
+        var analysis = 0;
         foreach (var fileName in allModule)
         {
             analysis++;
@@ -103,53 +103,55 @@ public class DllAnalysts
         return assemblies;
     }
 
-    public static List<CustomClassType> FindClassByClassName(string className)
+    public static List<BaseMap> FindClassByClassName(string className)
     {
-        var customClassTypes = new List<CustomClassType>();
-        using (var bar = new ProgressBar(allTypeSize, "分析已缓存的数据", _progressBarOptions))
+        var customClassTypes = new List<BaseMap>();
+        using var bar = new ProgressBar(_allTypeSize, "分析已缓存的数据", ProgressBarOptions);
+        for (var i = 0; i < CacheTypeDefinitions.Count; i++)
         {
-            for (int i = 0; i < cacheTypeDefinitions.Count; i++)
+            KeyValuePair<string, List<TypeDefinition>> kv = CacheTypeDefinitions.ElementAt(i);
+            string moduleName = kv.Key;
+            foreach (var typeDefinition in kv.Value)
             {
-                KeyValuePair<string, List<TypeDefinition>> kv = cacheTypeDefinitions.ElementAt(i);
-                string moduleName = kv.Key;
-                foreach (var typeDefinition in kv.Value)
+                if (typeDefinition.InheritsFrom(className))
                 {
-                    if (typeDefinition.InheritsFrom(className))
+                    var customClassType = new BaseMap
                     {
-                        var customClassType = new CustomClassType();
-                        customClassType.ClassName = typeDefinition.FullName;
-                        customClassType.ModuleName = moduleName;
-                        customClassTypes.Add(customClassType);
-                    }
-                    bar.Tick();
+                        ClassName = typeDefinition.FullName,
+                        ModuleName = moduleName
+                    };
+                    customClassTypes.Add(customClassType);
                 }
+                bar.Tick();
             }
         }
+
         return customClassTypes;
     }
 
-    public static List<CustomClassType> FindClassByInterfaceName(string interfaceName)
+    public static List<BaseMap> FindClassByInterfaceName(string interfaceName)
     {
-        var customClassTypes = new List<CustomClassType>();
-        using (var bar = new ProgressBar(allTypeSize, "分析已缓存的数据", _progressBarOptions))
+        var customClassTypes = new List<BaseMap>();
+        using var bar = new ProgressBar(_allTypeSize, "分析已缓存的数据", ProgressBarOptions);
+        for (var i = 0; i < CacheTypeDefinitions.Count; i++)
         {
-            for (int i = 0; i < cacheTypeDefinitions.Count; i++)
+            KeyValuePair<string, List<TypeDefinition>> kv = CacheTypeDefinitions.ElementAt(i);
+            var moduleName = kv.Key;
+            foreach (var typeDefinition in kv.Value)
             {
-                KeyValuePair<string, List<TypeDefinition>> kv = cacheTypeDefinitions.ElementAt(i);
-                string moduleName = kv.Key;
-                foreach (var typeDefinition in kv.Value)
+                if (typeDefinition.Implements(interfaceName))
                 {
-                    if (typeDefinition.Implements(interfaceName))
+                    var customClassType = new BaseMap
                     {
-                        var customClassType = new CustomClassType();
-                        customClassType.ClassName = typeDefinition.FullName;
-                        customClassType.ModuleName = moduleName;
-                        customClassTypes.Add(customClassType);
-                    }
-                    bar.Tick();
+                        ClassName = typeDefinition.FullName,
+                        ModuleName = moduleName
+                    };
+                    customClassTypes.Add(customClassType);
                 }
+                bar.Tick();
             }
         }
+
         return customClassTypes;
     }
 }

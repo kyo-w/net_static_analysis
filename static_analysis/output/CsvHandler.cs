@@ -22,13 +22,11 @@ public class CsvHandler : IOutputHandler
 
     private void Write(string fileName, object maps, Func<string> getCsvHeader)
     {
-        using (var controllerStream = new StreamWriter(fileName))
+        using var controllerStream = new StreamWriter(fileName);
+        foreach (var mapElem in (IEnumerable)maps)
         {
-            foreach (var mapElem in (IEnumerable)maps)
-            {
-                controllerStream.WriteLine(getCsvHeader.Invoke());
-                controllerStream.WriteLine(((BaseMap)mapElem).ToCsvString());
-            }
+            controllerStream.WriteLine(getCsvHeader.Invoke());
+            controllerStream.WriteLine(((BaseMap)mapElem).ToCsvString());
         }
     }
 }

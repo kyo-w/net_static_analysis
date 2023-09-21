@@ -39,7 +39,7 @@ public class ShellHandler
                     HandlerHelper();
                     break;
                 default:
-                    UnknownComand();
+                    UnknownCommand();
                     break;
             }
         }
@@ -47,25 +47,25 @@ public class ShellHandler
         return quitFlag;
     }
 
-    private void HandlerHelper()
+    private static void HandlerHelper()
     {
         Console.WriteLine("extend <className> :\t Print all subclasses of this class\n" +
                       "interface <interface> :\t Print all implementations of this interface\n" +
                       "quit :\t Exit program");
     }
 
-    private void UnknownComand()
+    private static void UnknownCommand()
     {
         Console.WriteLine("Unknown command");
     }
 
-    private void HandlerInterface(string interfaceName)
+    private static void HandlerInterface(string interfaceName)
     {
         var findClassByInterfaceName = DllAnalysts.FindClassByInterfaceName(interfaceName);
         findClassByInterfaceName.ForEach(Console.WriteLine);
     }
 
-    private void HandlerExtend(string className)
+    private static void HandlerExtend(string className)
     {
         var findByClassName = DllAnalysts.FindClassByClassName(className);
         findByClassName.ForEach(Console.WriteLine);

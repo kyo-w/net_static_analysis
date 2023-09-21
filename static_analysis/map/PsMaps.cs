@@ -18,11 +18,6 @@ public class PsMaps : BaseMap
     {
         return $"PowerShell: ModuleName={ModuleName}, ClassName={ClassName}, Command={VerbName}-{NounName}";
     }
-    
-    public override string ToCsvString()
-    {
-        return $"{ModuleName}, {ClassName}, {VerbName}-{NounName}";
-    }
 
     public new static string GetCsvHeader()
     {

@@ -2,7 +2,7 @@
 
 namespace static_analysis.map;
 
-public abstract class BaseMap 
+public  class BaseMap 
 {
     
     public string ModuleName { set; get; }
@@ -13,7 +13,7 @@ public abstract class BaseMap
         return "Assembly, ClassName";
     }
     
-    public virtual string ToCsvString()
+    public string ToCsvString()
     {
         return $"{ModuleName}, {ClassName}";
     }
