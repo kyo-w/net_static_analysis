@@ -27,10 +27,17 @@ staticAnalysts.exe ps --iis
 |参数|意义|
 |---|---|
 |--pid(必选)|附加进程的pid|
+|--shell(可选) | 可交互式分析|
 
 ```
 staticAnalysts.exe process --pid <pid>
 # 附件进程，然后分析进程加载的dll
+
+staticAnalysts.exe process --pid <pid> --shell
+# 此时会进入一个伪终端的命令行: 支持extend / interface / quit / help
+extend <className> :用于输出目标进程程序集中哪些类集成了className
+interface <interface> :用于输出目标进程程序集中哪些类实现了interface接口
+quit 退出程序
 ```
 
 ### path
@@ -41,6 +48,8 @@ staticAnalysts.exe process --pid <pid>
 ```
 staticAnalysts.exe path --path "C:\\"
 # 不附加进程，直接分析目录下所有的dll
+
+
 ```
 
 ### 可选参数

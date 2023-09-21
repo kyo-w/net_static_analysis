@@ -16,11 +16,18 @@ public class DllAnalysts
         BackgroundCharacter = '#'
     };
 
-    public static void AnalystsEveryDll(IEnumerable<ClrModule> clrModules, bool passSystemDllOption, bool singleAssemblyOption)
+    private static readonly Dictionary<string, List<TypeDefinition>> cacheTypeDefinitions =
+        new Dictionary<string, List<TypeDefinition>>();
+
+    private static int allTypeSize = 0;
+
+    public static void AnalystsEveryDll(IEnumerable<ClrModule> clrModules, bool passSystemDllOption,
+        bool singleAssemblyOption)
     {
         var processAllDll = clrModules.Select(elem => elem.Name).ToList();
         Console.WriteLine($"加载分析模块: 总计{processAllDll.Count}个DLL");
-        var fileLists = FileUtils.FilterPassSystemOption(processAllDll.ToArray(), passSystemDllOption, singleAssemblyOption);
+        var fileLists =
+            FileUtils.FilterPassSystemOption(processAllDll.ToArray(), passSystemDllOption, singleAssemblyOption);
         AnalystsEveryClassType(ProgressLoaderModule(fileLists));
     }
 
@@ -36,6 +43,12 @@ public class DllAnalysts
         {
             string moduleName = oneOfDll.Name;
             var typeDefinitions = oneOfDll.GetAllTypes().ToList();
+            allTypeSize += typeDefinitions.Count;
+            var complete = cacheTypeDefinitions.TryAdd(moduleName, typeDefinitions);
+            if (!complete)
+            {
+                continue;
+            }
             using (var bar = new ProgressBar(typeDefinitions.Count, $"分析模块: {oneOfDll.Name}", _progressBarOptions))
             {
                 foreach (var typeDefinition in typeDefinitions)
@@ -43,22 +56,25 @@ public class DllAnalysts
                     if (typeDefinition.InheritsFrom(NamespaceConstant.TYPE_CONTROLLER) ||
                         typeDefinition.InheritsFrom(NamespaceConstant.TYPE_CONTROLLER_BASE))
                     {
-                        MapManager.ControllerMaps.Add(new ControllerMap(moduleName, typeDefinition.FullName));
+                        ControllerMap.RegistryRecord(moduleName, typeDefinition);
                     }
                     else if (typeDefinition.InheritsFrom(NamespaceConstant.TYPE_API_CONTROLLER))
                     {
-                        MapManager.ApiControllerMaps.Add(new ApiControllerMap(moduleName, typeDefinition.FullName));
+                        ApiControllerMap.RegistryRecord(moduleName, typeDefinition);
                     }
                     else if (typeDefinition.Implements(NamespaceConstant.TYPE_HTTPMODULE))
                     {
-                        MapManager.HttpModuleMaps.Add(new HttpModuleMap(moduleName, typeDefinition.FullName));
+                        HttpModuleMap.RegistryRecord(moduleName, typeDefinition);
                     }
                     else if (typeDefinition.Implements(NamespaceConstant.TYPE_HTTPHANDLER))
                     {
-                        MapManager.HttpHandlerMaps.Add(new HttpHandlerMap(moduleName, typeDefinition.FullName));
+                        HttpHandlerMap.RegistryRecord(moduleName, typeDefinition);
+                    }else if (typeDefinition.InheritsFrom(NamespaceConstant.TYPE_PS))
+                    {
+                        PsMaps.RegistryRecord(moduleName, typeDefinition);
                     }
                     bar.Tick();
-                }   
+                }
             }
         }
     }
@@ -82,8 +98,58 @@ public class DllAnalysts
             {
                 bar.Tick($"{allModule.Length}/{analysis} 加载失败: {fileName}模块跳过");
             }
-
         }
+
         return assemblies;
+    }
+
+    public static List<CustomClassType> FindClassByClassName(string className)
+    {
+        var customClassTypes = new List<CustomClassType>();
+        using (var bar = new ProgressBar(allTypeSize, "分析已缓存的数据", _progressBarOptions))
+        {
+            for (int i = 0; i < cacheTypeDefinitions.Count; i++)
+            {
+                KeyValuePair<string, List<TypeDefinition>> kv = cacheTypeDefinitions.ElementAt(i);
+                string moduleName = kv.Key;
+                foreach (var typeDefinition in kv.Value)
+                {
+                    if (typeDefinition.InheritsFrom(className))
+                    {
+                        var customClassType = new CustomClassType();
+                        customClassType.ClassName = typeDefinition.FullName;
+                        customClassType.ModuleName = moduleName;
+                        customClassTypes.Add(customClassType);
+                    }
+                    bar.Tick();
+                }
+            }
+        }
+        return customClassTypes;
+    }
+
+    public static List<CustomClassType> FindClassByInterfaceName(string interfaceName)
+    {
+        var customClassTypes = new List<CustomClassType>();
+        using (var bar = new ProgressBar(allTypeSize, "分析已缓存的数据", _progressBarOptions))
+        {
+            for (int i = 0; i < cacheTypeDefinitions.Count; i++)
+            {
+                KeyValuePair<string, List<TypeDefinition>> kv = cacheTypeDefinitions.ElementAt(i);
+                string moduleName = kv.Key;
+                foreach (var typeDefinition in kv.Value)
+                {
+                    if (typeDefinition.Implements(interfaceName))
+                    {
+                        var customClassType = new CustomClassType();
+                        customClassType.ClassName = typeDefinition.FullName;
+                        customClassType.ModuleName = moduleName;
+                        customClassTypes.Add(customClassType);
+                    }
+                    bar.Tick();
+                }
+            }
+        }
+        return customClassTypes;
     }
 }

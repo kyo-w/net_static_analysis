@@ -13,12 +13,18 @@ public static class ProcessHelp
         var pidOption = new Option<int>(
             name: "--pid",
             description: ".net进程"){IsRequired = true};
+        var shellOption = new Option<bool>(
+            name: "--shell",
+            description: "交互式shell(extends/interface/help)",
+            getDefaultValue: () => false);
         command.AddOption(pidOption);
+        command.AddOption(shellOption);
         command.SetHandler(ProcessHandler, pidOption, 
             GlobalHelp.PassSystemDllOption,
             GlobalHelp.SingleAssemblyOption,
             GlobalHelp.OutputTypeOption,
-            GlobalHelp.OutputDirOption);
+            GlobalHelp.OutputDirOption,
+            shellOption);
         rootCommand.Add(command);
     }
 
@@ -26,7 +32,7 @@ public static class ProcessHelp
         bool passSystemDllOption,
         bool singleAssemblyOption,
         string outputTypeOption,
-        string outputDirOption)
+        string outputDirOption, bool shellOption)
     {
         if (FileUtils.CreateOutputDir(outputDirOption))
         {
@@ -34,7 +40,14 @@ public static class ProcessHelp
             var attachToProcess = DataTarget.AttachToProcess(process.Id, false);
             var clrInfo = attachToProcess.ClrVersions.First();
             DllAnalysts.AnalystsEveryDll(clrInfo.CreateRuntime().EnumerateModules(), passSystemDllOption, singleAssemblyOption);
-            MapManager.Output( outputDirOption, outputTypeOption);   
+            if (shellOption)
+            {
+                new ShellHandler().Run();
+            }
+            else
+            {
+                MapManager.Output( outputDirOption, outputTypeOption);
+            }
         }
         else
         {

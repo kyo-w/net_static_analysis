@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dq5TYOs9wLSLogaLBgZ/2kg8lVwyqhXJ+i6eqT17qhDqgXcaFz5rtdT06OkKEF92tMVOhGtkgA4eFlSYlGuWew==",
+  "dgSpecHash": "LJOlF+sqHZI40gjE89al2cXlzUyBAKuLvZTXnrbH99aN0JvtxKQOLd9046Zw+D7V1If5fNtlBTVXQPBg02iJOw==",
   "success": true,
   "projectFilePath": "D:\\project\\CshapeProject\\Net_static_analysis\\static_analysis\\static_analysis\\static_analysis.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,8 @@
     "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.win32.registry.accesscontrol\\8.0.0-preview.7.23375.6\\microsoft.win32.registry.accesscontrol.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0-preview.7.23375.6\\microsoft.win32.systemevents.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.windows.compatibility\\8.0.0-preview.7.23376.1\\microsoft.windows.compatibility.8.0.0-preview.7.23376.1.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\powershellstandard.library\\5.1.1\\powershellstandard.library.5.1.1.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",

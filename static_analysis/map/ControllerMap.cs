@@ -1,9 +1,9 @@
-﻿namespace static_analysis.map;
+﻿using AsmResolver.DotNet;
 
-public class ControllerMap
+namespace static_analysis.map;
+
+public class ControllerMap : BaseMap
 {
-    public string ModuleName { get; set; }
-    public string ClassName { set; get; }
 
     public ControllerMap(string moduleName, string className)
     {
@@ -11,12 +11,15 @@ public class ControllerMap
         ClassName = className;
     }
 
+    
+    
     public override string ToString()
     {
         return $"Controller: ModuleName={ModuleName}, ClassName={ClassName}";
     }
-    public string ToCsvString()
+
+    public static void RegistryRecord(string moduleName, TypeDefinition typeDefinition)
     {
-        return $"{ModuleName}, {ClassName}";
+        MapManager.ControllerMaps.Add(new ControllerMap(moduleName, typeDefinition.FullName));
     }
 }

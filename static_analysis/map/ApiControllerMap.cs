@@ -1,23 +1,23 @@
-﻿namespace static_analysis.map;
+﻿using AsmResolver.DotNet;
 
-public class ApiControllerMap
+namespace static_analysis.map;
+
+public class ApiControllerMap : BaseMap
 {
-    public string ModuleName { set; get; }
-    public string ClassName { get; set; }
 
     public ApiControllerMap(string moduleName, string className)
     {
         ModuleName = moduleName;
         ClassName = className;
     }
-
+    
     public override string ToString()
     {
         return $"ApiController: ModuleName={ModuleName}, ClassName={ClassName}";
     }
 
-    public string ToCsvString()
+    public static void RegistryRecord(string moduleName, TypeDefinition typeDefinition)
     {
-        return $"{ModuleName}, {ClassName}";
+        MapManager.ApiControllerMaps.Add(new ApiControllerMap(moduleName, typeDefinition.FullName));
     }
 }

@@ -4,11 +4,11 @@ namespace static_analysis.help;
 
 public static class GlobalHelp
 {
-    public static Option<bool> PassSystemDllOption;
+    public static Option<bool>? PassSystemDllOption;
 
-    public static Option<bool> SingleAssemblyOption;
-    public static Option<string> OutputTypeOption;
-    public static Option<string> OutputDirOption;
+    public static Option<bool>? SingleAssemblyOption;
+    public static Option<string>? OutputTypeOption;
+    public static Option<string>? OutputDirOption;
     public static void ConfigGlobalCommand(this RootCommand rootCommand)
     {
         PassSystemDllOption = new Option<bool>(

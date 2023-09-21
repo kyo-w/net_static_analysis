@@ -1,4 +1,6 @@
-﻿namespace static_analysis.output;
+﻿using static_analysis.map;
+
+namespace static_analysis.output;
 
 public class ConsoleHandler : IOutputHandler
 {
@@ -17,6 +19,10 @@ public class ConsoleHandler : IOutputHandler
             Console.WriteLine(map);
         }
         foreach (var map in MapManager.HttpHandlerMaps)
+        {
+            Console.WriteLine(map);
+        }
+        foreach (var map in MapManager.PsMaps)
         {
             Console.WriteLine(map);
         }

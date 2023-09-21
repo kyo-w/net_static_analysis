@@ -1,0 +1,2 @@
+Assembly, ClassName, Command
+testpowershell.dll, testpowershell.command.GetInfo, Get-Info

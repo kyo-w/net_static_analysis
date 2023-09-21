@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "static_analysis": {
+      "commandName": "Project",
+      "commandLineArgs": "path --path \"D:\\C#_home\\fx\\test_powershell\\powershell\\bin\\Debug\\netstandard2.0\""
+    }
+  }
+}

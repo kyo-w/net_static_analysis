@@ -249,7 +249,6 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\hostfxr.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\hostpolicy.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\mscordaccore.dll
-D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.1623.17311.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\mscordbi.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\mscorrc.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\msquic.dll
@@ -332,3 +331,5 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\zh-Hans\System.Web.Services.Description.resources.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\zh-Hant\System.Web.Services.Description.resources.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\sni.dll
+D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\System.Management.Automation.dll
+D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.2223.42425.dll

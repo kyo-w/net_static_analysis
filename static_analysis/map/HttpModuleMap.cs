@@ -1,22 +1,22 @@
-﻿namespace static_analysis.map;
+﻿using AsmResolver.DotNet;
 
-public class HttpModuleMap
+namespace static_analysis.map;
+
+public class HttpModuleMap : BaseMap
 {
-    public string ModuleName { set; get; }
-    public string ClassName { set; get; }
-
-    public HttpModuleMap(string moduleName, string className)
+    public HttpModuleMap(string moduleName, string className) 
     {
         ModuleName = moduleName;
         ClassName = className;
     }
 
+    public static void RegistryRecord(string moduleName, TypeDefinition typeDefinition)
+    {
+        MapManager.HttpModuleMaps.Add(new HttpModuleMap(moduleName, typeDefinition.FullName));
+    }
+
     public override string ToString()
     {
         return $"HttpModule: ModuleName={ModuleName}, ClassName={ClassName}";
-    }
-    public string ToCsvString()
-    {
-        return $"{ModuleName}, {ClassName}";
     }
 }

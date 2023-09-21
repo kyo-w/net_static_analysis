@@ -135,6 +135,7 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Encoding.Extensions.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Encoding.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Encodings.Web.dll
+D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Json.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.RegularExpressions.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Threading.Channels.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Threading.Overlapped.dll
@@ -217,7 +218,7 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\hostfxr.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\hostpolicy.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\mscordaccore.dll
-D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\mscordaccore_amd64_amd64_6.0.1623.17311.dll
+D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\mscordaccore_amd64_amd64_6.0.2223.42425.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\mscordbi.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\mscorrc.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\msquic.dll
@@ -240,6 +241,7 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\Microsoft.Extensions.Primitives.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\Microsoft.Win32.Registry.AccessControl.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\Microsoft.Win32.SystemEvents.dll
+D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Management.Automation.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\ShellProgressBar.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.CodeDom.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.CommandLine.dll
@@ -277,7 +279,6 @@ D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.ServiceProcess.ServiceController.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Speech.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Encoding.CodePages.dll
-D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Text.Json.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Threading.AccessControl.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Web.Services.Description.dll
 D:\project\CshapeProject\Net_static_analysis\static_analysis\static_analysis\bin\Release\net6.0\win-x64\publish\System.Windows.Extensions.dll
