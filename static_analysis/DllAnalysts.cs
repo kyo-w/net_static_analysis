@@ -41,7 +41,7 @@ public class DllAnalysts
     {
         foreach (var oneOfDll in moduleDefinitions)
         {
-            string moduleName = oneOfDll.Name;
+            var moduleName = oneOfDll.Name;
             var typeDefinitions = oneOfDll.GetAllTypes().ToList();
             _allTypeSize += typeDefinitions.Count;
             var complete = CacheTypeDefinitions.TryAdd(moduleName, typeDefinitions);

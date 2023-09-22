@@ -4,8 +4,7 @@ namespace static_analysis.map;
 
 public class ApiControllerMap : BaseMap
 {
-
-    public ApiControllerMap(string moduleName, string className)
+    private ApiControllerMap(string moduleName, string className)
     {
         ModuleName = moduleName;
         ClassName = className;

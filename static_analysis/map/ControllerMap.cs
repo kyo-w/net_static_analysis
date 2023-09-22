@@ -4,8 +4,7 @@ namespace static_analysis.map;
 
 public class ControllerMap : BaseMap
 {
-
-    public ControllerMap(string moduleName, string className)
+    private ControllerMap(string moduleName, string className)
     {
         ModuleName = moduleName;
         ClassName = className;

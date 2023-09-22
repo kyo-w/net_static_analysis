@@ -4,7 +4,7 @@ namespace static_analysis.map;
 
 public class HttpModuleMap : BaseMap
 {
-    public HttpModuleMap(string moduleName, string className) 
+    private HttpModuleMap(string moduleName, string className) 
     {
         ModuleName = moduleName;
         ClassName = className;

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LJOlF+sqHZI40gjE89al2cXlzUyBAKuLvZTXnrbH99aN0JvtxKQOLd9046Zw+D7V1If5fNtlBTVXQPBg02iJOw==",
+  "dgSpecHash": "1YCQ3qERkfMCRbtFNfCov6KSV8/T0Ki6LbOKqOfMjonDhy4nRNMdf3M9S//DkOjfdMr5RYHbqLsW3X8PP2BBMw==",
   "success": true,
   "projectFilePath": "D:\\project\\CshapeProject\\Net_static_analysis\\static_analysis\\static_analysis\\static_analysis.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,17 @@
     "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.windows.compatibility\\8.0.0-preview.7.23376.1\\microsoft.windows.compatibility.8.0.0-preview.7.23376.1.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\powershellstandard.library\\5.1.1\\powershellstandard.library.5.1.1.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.globalization\\4.3.0\\runtime.any.system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.reflection\\4.3.0\\runtime.any.system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.reflection.extensions\\4.3.0\\runtime.any.system.reflection.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.reflection.primitives\\4.3.0\\runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.resources.resourcemanager\\4.3.0\\runtime.any.system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.runtime.handles\\4.3.0\\runtime.any.system.runtime.handles.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.runtime.interopservices\\4.3.0\\runtime.any.system.runtime.interopservices.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.any.system.threading.tasks\\4.3.0\\runtime.any.system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0-preview.7.23375.6\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0-preview.7.23375.6.nupkg.sha512",
@@ -64,6 +75,7 @@
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.private.servicemodel\\4.10.0\\system.private.servicemodel.4.10.0.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.reflection.context\\8.0.0-preview.7.23375.6\\system.reflection.context.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.reflection.dispatchproxy\\4.7.1\\system.reflection.dispatchproxy.4.7.1.nupkg.sha512",
@@ -98,7 +110,10 @@
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.threading.accesscontrol\\8.0.0-preview.7.23375.6\\system.threading.accesscontrol.8.0.0-preview.7.23375.6.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\kyo-w\\.nuget\\packages\\system.web.services.description\\4.10.0\\system.web.services.description.4.10.0.nupkg.sha512",
-    "C:\\Users\\kyo-w\\.nuget\\packages\\system.windows.extensions\\8.0.0-preview.7.23375.6\\system.windows.extensions.8.0.0-preview.7.23375.6.nupkg.sha512"
+    "C:\\Users\\kyo-w\\.nuget\\packages\\system.windows.extensions\\8.0.0-preview.7.23375.6\\system.windows.extensions.8.0.0-preview.7.23375.6.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.22\\microsoft.netcore.app.runtime.win-x64.6.0.22.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.22\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.22.nupkg.sha512",
+    "C:\\Users\\kyo-w\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.22\\microsoft.aspnetcore.app.runtime.win-x64.6.0.22.nupkg.sha512"
   ],
   "logs": []
 }
